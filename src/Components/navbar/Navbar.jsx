@@ -1,8 +1,25 @@
 
 
 const Navbar = () => {
+         const routes = [
+  { id: 1, path: "/", name: "Home", element: "Home" },
+  { id: 2, path: "/about", name: "About", element: "About" },
+  { id: 3, path: "/services", name: "Services", element: "Services" },
+  { id: 4, path: "/blog", name: "Blog", element: "Blog" },
+  { id: 5, path: "/contact", name: "Contact", element: "Contact" }
+];
+
+// export default routes;
+  
     return (
-        <div>
+        <nav>
+        <ul className="md:flex">
+                {
+          routes.map(route => <li className="mr-12" key={route.id}>
+            <a href={`route.path`}>{route.name}</a>
+          </li>)
+            }
+        </ul>
             <div className="navbar bg-slate-200">
   <div className="navbar-start">
     <div className="dropdown">
@@ -32,8 +49,9 @@ const Navbar = () => {
   </div>
 </div>
 <button className="text-blue-900 bg-green-300 m-4 p-4  rounded">Click me</button>
-        </div>
-       
+        
+        </nav>
+
     );
 };
 
